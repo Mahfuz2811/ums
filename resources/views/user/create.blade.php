@@ -18,56 +18,67 @@
         </div>
     </div> 
     <div class="main-card mb-3 card">
-        <div class="card-body"><h5 class="card-title">User Info</h5>
-            <form class="">
+        <div class="card-body"><h5 class="card-title">Add User</h5>
+            {!! Form::open(['route' => 'user.store', 'method' => 'post', 'class' => 'form-horizontal', 'id' => 'myform', 'files' => 'true', 'enctype' => "multipart/form-data"]) !!}
                 <div class="form-row">
                     <div class="col-md-6">
                         <div class="position-relative form-group">
-                        	<label for="exampleEmail11" class="">Email</label>
-                        	<input name="email" id="exampleEmail11" placeholder="with a placeholder" type="email" class="form-control">
+                        	<label for="username" class="">Usename</label>
+                        	<input name="username" id="username" placeholder="Enter Username" type="text" class="form-control" onfocus="this.removeAttribute('readonly');" readonly>
+                            @if($errors->has('username'))
+                                <span class="text-danger">{{ $errors->first('username') }}</span>
+                            @endif
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="position-relative form-group">
-                        	<label for="examplePassword11" class="">Password</label>
-                        	<input name="password" id="examplePassword11" placeholder="password placeholder" type="password" class="form-control">
+                        	<label for="password" class="">Password</label>
+                        	<input name="password" id="password" placeholder="Enter Password" type="password" class="form-control">
+                            @if($errors->has('password'))
+                                <span class="text-danger">{{ $errors->first('password') }}</span>
+                            @endif
                         </div>
                     </div>
                 </div>
-                <div class="position-relative form-group">
-                	<label for="exampleAddress" class="">Address</label>
-                	<input name="address" id="exampleAddress" placeholder="1234 Main St" type="text" class="form-control">
-                </div>
-                <div class="position-relative form-group">
-                	<label for="exampleAddress2" class="">Address 2</label>
-                	<input name="address2" id="exampleAddress2" placeholder="Apartment, studio, or floor" type="text" class="form-control">
-                </div>
+
                 <div class="form-row">
                     <div class="col-md-6">
                         <div class="position-relative form-group">
-                        	<label for="exampleCity" class="">City</label>
-                        	<input name="city" id="exampleCity" type="text" class="form-control">
+                            <label for="email" class="">Email</label>
+                            <input name="email" id="email" placeholder="Enter Email" type="email" class="form-control">
+                            @if($errors->has('email'))
+                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                            @endif
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="position-relative form-group">
-                        	<label for="exampleState" class="">State</label>
-                        	<input name="state" id="exampleState" type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="position-relative form-group">
-                        	<label for="exampleZip" class="">Zip</label>
-                        	<input name="zip" id="exampleZip" type="text" class="form-control">
+                            <label for="phone" class="">Phone</label>
+                            <input name="phone" id="phone" placeholder="Enter Phone" type="text" class="form-control">
+                            @if($errors->has('phone'))
+                                <span class="text-danger">{{ $errors->first('phone') }}</span>
+                            @endif
                         </div>
                     </div>
                 </div>
-                <div class="position-relative form-check">
-                	<input name="check" id="exampleCheck" type="checkbox" class="form-check-input">
-                	<label for="exampleCheck" class="form-check-label">Check me out</label>
+
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <div class="position-relative form-group">
+                            <label for="avatar" class="">Avatar/Profile Image</label>
+                            <input name="avatar" id="avatar" type="file" class="form-control-file">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="position-relative form-group">
+                            <label for="cover_image" class="">Cover Image</label>
+                            <input name="cover_image" id="cover_image" type="file" class="form-control-file">
+                        </div>
+                    </div>
                 </div>
-                <button class="mt-2 btn btn-primary">Sign in</button>
-            </form>
+
+                <button class="mt-2 btn btn-primary">SAVE</button>
+            {!! Form::close() !!}
         </div>
     </div>
 </div>

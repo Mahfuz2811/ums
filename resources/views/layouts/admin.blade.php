@@ -11,15 +11,27 @@
     <meta name="description" content="">
     <meta name="msapplication-tap-highlight" content="no">
 
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
 
     <link href="{{ url('assets/css/main.css') }}" rel="stylesheet">
+    <link href="{{ url('assets/css/custom.css') }}" rel="stylesheet">
 
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
 	<script type="text/javascript" src="{{ url('assets/scripts/main.js') }}"></script>
 	
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 	<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+    <script src="{{ asset('assets/scripts/sweetalert/sweetalert.min.js') }}"></script>
+
+    <style>
+        input[readonly] {
+            cursor: text;
+            background-color: #fff !important;
+        }
+    </style>
 
 </head>
 <body>

@@ -15,10 +15,8 @@ Route::get('/', function () {
     return view('dashboard.index');
 });
 
-Route::get('/user', function () {
-    return view('user.index');
-});
+Route::resource('/user', 'UserController');
 
-Route::get('/user/create', function () {
+/*Route::get('/user/create', function () {
     return view('user.create');
-});
+});*/
